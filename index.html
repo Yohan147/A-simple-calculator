@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Yohannes Mengistu">
+    <title>Calculator | Yohannes</title>
+    <style>
+        body {
+            background-color: lightblue;
+            text-align: center;
+            margin-top: 50px;
+            font-family: Arial;
+        }
+        .box {
+            background: white;
+            width: 280px;
+            margin: 10px;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        input {
+            width: 90%;
+            height: 60px;
+            font-size: 28px;
+            text-align: right;
+            margin-bottom: 15px;
+        }
+        button {
+            width: 55px;
+            height: 55px;
+            margin: 5px;
+            font-size: 20px;
+        }
+        .equal {
+            background: orange;
+        }
+        .clear {
+            background: lightblue;
+        }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>Calculator</h2>
+    <p>Yohannes Mengistu | Ethiopia</p>
+    
+    <input type="text" id="display" readonly>
+    
+    <br>
+    
+    <!-- Row 1 -->
+    <button onclick="clearScreen()" class="clear">C</button>
+    <button onclick="add('(')">(</button>
+    <button onclick="add(')')">)</button>
+    <button onclick="add('/')">/</button>
+    <br>
+    
+    <!-- Row 2 -->
+    <button onclick="add('7')">7</button>
+    <button onclick="add('8')">8</button>
+    <button onclick="add('9')">9</button>
+    <button onclick="add('*')">*</button>
+    <br>
+    
+    <!-- Row 3 -->
+    <button onclick="add('4')">4</button>
+    <button onclick="add('5')">5</button>
+    <button onclick="add('6')">6</button>
+    <button onclick="add('-')">-</button>
+    <br>
+    
+    <!-- Row 4 -->
+    <button onclick="add('1')">1</button>
+    <button onclick="add('2')">2</button>
+    <button onclick="add('3')">3</button>
+    <button onclick="add('+')">+</button>
+    <br>
+    
+    <!-- Row 5 -->
+    <button onclick="add('0')">0</button>
+    <button onclick="add('.')">.</button>
+    <button onclick="calculate()" class="equal">=</button>
+    
+    <p>Made by Yohannes Mengistu</p>
+</div>
+
+<script>
+    // Get the display input using its ID
+    let display = document.getElementById('display');
+    
+    // Function to add numbers and symbols to the screen
+    function add(value) {
+        display.value = display.value + value;
+    }
+    
+    // Function to clear the screen
+    function clearScreen() {
+        display.value = '';
+    }
+    
+    // Function to calculate the answer
+    function calculate() {
+        let answer = eval(display.value);
+        display.value = answer;
+    }
+</script>
+
+</body>
+</html>
